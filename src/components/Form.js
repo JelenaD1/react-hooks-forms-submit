@@ -20,6 +20,7 @@ function Form() {
     const formData = { firstName: firstName, lastName: lastName }
     const dataArray = [...submittedData, formData]
     setSubmittedData(dataArray);
+    console.log(dataArray)
     setFirstName("");
     setLastName("");
     setErrors([])
@@ -37,7 +38,7 @@ function Form() {
 
   return (
     <>
-    <form>
+    <form onSubmit={handleSubmit}>
       <input type="text" onChange={handleFirstNameChange} value={firstName} />
       <input type="text" onChange={handleLastNameChange} value={lastName} />
       <button type="submit">Submit</button>
